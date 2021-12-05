@@ -1,8 +1,8 @@
 <img src="./images/URI.png" width="45" align="right">
 
-# CSC212 Fall 2021 Project - Search II
+# CSC212 Fall 2021 Project - String Search II
 
-The project goals for our search project.:
+The project goals for our search project:
 
 - Bullet 1
 - Bullet 2
