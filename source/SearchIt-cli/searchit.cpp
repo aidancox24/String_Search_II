@@ -27,7 +27,7 @@ SearchIt::SearchIt(std::string text, std::string pattern) {
  *
  * Implementation written by Aidan Cox
  */
-void SearchIt::search(std::string searchType) {
+std::string SearchIt::search(std::string searchType) {
     // Keep track of the indices of the matched patterns
     std::vector<int> found_patterns;
 
@@ -39,14 +39,15 @@ void SearchIt::search(std::string searchType) {
         // Let's use the Knuth-Morris-Pratt search algorithm
         _searchType = "KMP";
         found_patterns = searchUsingKMP();
-    } else if (searchType == "BM"){
+    } else if (searchType == "BM") {
         // Let's use the Boyer-Moore search algorithm
         _searchType = "BM";
         found_patterns = searchUsingBM();
     } else {
-        std::cout << searchType << " is not a supported search type.  \n\nSupported search types are 'KMP' and 'BM'.\n\nSee "
-                                   "searchit.exe -help for details.";
-        return;
+        std::cout << searchType
+                  << " is not a supported search type.  \n\nSupported search types are 'KMP' and 'BM'.\n\nSee "
+                     "searchit.exe -help for details.";
+        return "";
     }
 
     // At this point the search is complete and found_patterns has the search results
@@ -60,6 +61,8 @@ void SearchIt::search(std::string searchType) {
 
     // Also display the search results to the console
     std::cout << searchResults << "\n";
+
+    return searchResults;
 }
 
 /**
@@ -84,7 +87,7 @@ std::string SearchIt::writeSearchResults(float duration, std::vector<int> found_
 
     // Add some results information to our searchResultsStream
     searchResultsStream << std::fixed << std::setprecision(4) << "Search Duration:      " << duration
-                        <<" milliseconds\n";
+                        << " milliseconds\n";
     searchResultsStream << "Search Pattern:       " << _pattern << "\n";
     searchResultsStream << "Search Results File:  " << resultsSummaryFileName << "\n";
     searchResultsStream << "Search Results:\t" << "\n";
@@ -113,7 +116,6 @@ std::string SearchIt::writeSearchResults(float duration, std::vector<int> found_
     // Return the search summary results as a string
     return searchResultsStream.str();
 }
-
 
 /**
  * Shows the command line usage for our SearchIt cli
@@ -208,7 +210,7 @@ int main(int argc, char *argv[]) {
  *
  * Knuth-Morris-Pratt implementation written by Nicholas Mendes
  */
-std::vector<int> SearchIt::searchUsingKMP(){
+std::vector<int> SearchIt::searchUsingKMP() {
     // Vector of indexes that match the pattern, the pattern and text indexes are initialized
     std::vector<int> found_patterns;
     int pattern_index = 0;
@@ -217,22 +219,22 @@ std::vector<int> SearchIt::searchUsingKMP(){
     std::vector<int> shift_table = find_shift_table();
 
     // Run until there are no more characters to check
-    while(text_index < _text.size()){
+    while (text_index < _text.size()) {
         // If there is a match, increment the indexes
-        if(_pattern[pattern_index] == _text[text_index]){
+        if (_pattern[pattern_index] == _text[text_index]) {
             text_index++;
             pattern_index++;
         }
 
         // If the pattern index makes it past the pattern without an encountering a mismatch, push the index of the text
         // Into the vector and reset the index
-        if(pattern_index == _pattern.size()){
-            found_patterns.push_back(text_index-_pattern.size());
+        if (pattern_index == _pattern.size()) {
+            found_patterns.push_back(text_index - _pattern.size());
             pattern_index = shift_table[pattern_index - 1];
             // If a mismatch occurs, then either reset the pattern index if the mismatch occurred anywhere but the first
             // Character or increment the text index if the mismatch is on the first character
-        } else if(_pattern[pattern_index] != _text[text_index]){
-            if(pattern_index){
+        } else if (_pattern[pattern_index] != _text[text_index]) {
+            if (pattern_index) {
                 pattern_index = shift_table[pattern_index - 1];
             } else {
                 text_index++;
@@ -253,7 +255,7 @@ std::vector<int> SearchIt::searchUsingKMP(){
  *
  * Knuth-Morris-Pratt implementation written by Nicholas Mendes
 */
-std::vector<int> SearchIt::find_shift_table(){
+std::vector<int> SearchIt::find_shift_table() {
     // Initialize a vector of indexes to return
     std::vector<int> shift_table;
     shift_table.push_back(0); // If the mismatch is at the first character, nothing should change (placeholder)
@@ -264,20 +266,20 @@ std::vector<int> SearchIt::find_shift_table(){
     std::string prefix = _pattern.substr(0, prefix_size);
 
     // Run so long as the prefix is not bigger than the pattern
-    while(prefix_size <= _pattern.size()){
+    while (prefix_size <= _pattern.size()) {
         shift = 0; // Set the shift to 0
         int pre_start = 0; // Index where the prefix of the prefix starts
         int pre_size = 1; // Number of characters in the prefix of the prefix
-        int suf_start = prefix.size()-1; // Index where the suffix should begin
+        int suf_start = prefix.size() - 1; // Index where the suffix should begin
 
         // Run while the suffix of the prefix does not include the first character
-        while(suf_start > 0){
+        while (suf_start > 0) {
             // Make substrings to hold the prefix and suffix of the prefix
             std::string temp_prefix = prefix.substr(pre_start, pre_size);
             std::string temp_suffix = prefix.substr(suf_start);
 
             // If the strings are equivalent, set the shift to the number of characters in the matching strings
-            if(temp_prefix == temp_suffix){
+            if (temp_prefix == temp_suffix) {
                 shift = temp_prefix.size();
             }
 
@@ -294,13 +296,12 @@ std::vector<int> SearchIt::find_shift_table(){
     return shift_table;
 }
 
-
 /**
  * Boyer-Moore (BM)
  *
  * Boyer Moore implementation written by Nicholas Mendes
  */
-std::vector<int> SearchIt::searchUsingBM(){
+std::vector<int> SearchIt::searchUsingBM() {
     std::vector<std::vector<int>> indexes; // Creates table of indexes for preprocessing
     std::vector<int> bad_char = preprocess_bad_character(indexes); // Finds the bad_character table
     std::vector<int> good_suf = preprocess_good_suffix(indexes); // Finds the good suffix table
@@ -311,19 +312,19 @@ std::vector<int> SearchIt::searchUsingBM(){
     int pattern_index = _pattern.size() - 1;
 
     // Run until there are no more valid indexes to check
-    while(text_index <= _text.size() - _pattern.size()){
+    while (text_index <= _text.size() - _pattern.size()) {
         // store old index for reassignment latter
         int origin = text_index;
 
         // Until there is a mismatch or either index goes less than 0, decrease both indices
-        while(( pattern_index >= 0 || text_index >= 0 ) && _pattern[pattern_index] == _text[text_index]){
+        while ((pattern_index >= 0 || text_index >= 0) && _pattern[pattern_index] == _text[text_index]) {
             pattern_index--;
             text_index--;
         }
 
         // If a pattern is found (index = -1), add the text index, then reset the index to be one to the right of the
         // pattern
-        if(pattern_index < 0){
+        if (pattern_index < 0) {
             found_patterns.push_back(text_index + 1);
             text_index = origin + 1;
             // If no pattern is found, find the appropriate shift from each table and then add the largest to the index
@@ -331,14 +332,14 @@ std::vector<int> SearchIt::searchUsingBM(){
         } else {
             int bad_char_shift = bad_char[static_cast<int>(_text[text_index])];
             int good_suf_shift = good_suf[_pattern.size() - pattern_index - 1];
-            if(good_suf_shift >= bad_char_shift){
+            if (good_suf_shift >= bad_char_shift) {
                 text_index += good_suf_shift;
             } else {
                 text_index += bad_char_shift;
             }
         }
         // Reset pattern_index to right most index
-        pattern_index = _pattern.size()-1;
+        pattern_index = _pattern.size() - 1;
     }
 
 //    // Write out the results to the search results file
@@ -362,22 +363,22 @@ std::vector<int> SearchIt::searchUsingBM(){
  * Boyer Moore implementation written by Nicholas Mendes
 */
 
-std::vector<int> SearchIt::preprocess_bad_character(std::vector<std::vector<int>>& bad_characters){
+std::vector<int> SearchIt::preprocess_bad_character(std::vector<std::vector<int>> &bad_characters) {
     int alphabet_size = 256; // Set alphabet to 256 (size of extended ASCII alphabet)
     int most_recent_idx; // Index for both tables
 
     std::vector<int> bad_character_table; // 1D table of shift values
 
-    for(int i = 0; i < alphabet_size; i++){ // Run for the size of the alphabet
+    for (int i = 0; i < alphabet_size; i++) { // Run for the size of the alphabet
         // Reset the index to -1
         most_recent_idx = -1;
 
         // Row for the 2D table
         std::vector<int> row_for_table;
 
-        for(int j = 0; j < _pattern.size(); j++){ // Run for the size of the pattern
+        for (int j = 0; j < _pattern.size(); j++) { // Run for the size of the pattern
             // If the character exists in the pattern, replace the most recent index for j
-            if(i == static_cast<int>(_pattern[j])){
+            if (i == static_cast<int>(_pattern[j])) {
                 most_recent_idx = j;
             }
             // Push the most recent index into the row
@@ -406,7 +407,7 @@ std::vector<int> SearchIt::preprocess_bad_character(std::vector<std::vector<int>
  *
  * Boyer Moore implementation written by Nicholas Mendes
 */
-std::vector<int> SearchIt::preprocess_good_suffix(std::vector<std::vector<int>>& bad_characters){
+std::vector<int> SearchIt::preprocess_good_suffix(std::vector<std::vector<int>> &bad_characters) {
     std::vector<int> good_suffixes; // Vector to hold the shift values of the different
     std::string suffix; // String to hold the suffix of the pattern
 
@@ -416,31 +417,31 @@ std::vector<int> SearchIt::preprocess_good_suffix(std::vector<std::vector<int>>&
     bool found; // Boolean for if a pattern has been found
 
     // Until the left most character does not match the last character, add the character to the front of the string
-    while(last_index >= 0 && _pattern[last_index - 1] == _pattern[last_index]){
+    while (last_index >= 0 && _pattern[last_index - 1] == _pattern[last_index]) {
         last_index--;
     }
 
     suffix = _pattern.substr(last_index);
 
     // Add the size of the initial suffix to the vector of shift values
-    for(int i = 0; i < suffix.size(); i++){
+    for (int i = 0; i < suffix.size(); i++) {
         good_suffixes.push_back(suffix.size());
     }
 
     // Run until you reach index 0
-    while(last_index > 0){
+    while (last_index > 0) {
         // Set next index to the closest leftmost index where the first character in the suffix matches
         next_index = bad_characters[static_cast<int>(suffix[0])][last_index - 1];
         found = false; // Set found to false
 
         // Run until either the index is <= 0 or the suffix is found elsewhere in the string
-        while(next_index > 0 && !found){
+        while (next_index > 0 && !found) {
             // Create a substring that is the same size as the suffix, staring at the next leftmost index
             std::string possible_suffix_loc = _pattern.substr(next_index, suffix.size());
 
             // If the suffix matches with this substring of the pattern and the next character to the left does not
             // Match, add the shift to the vector and set found to true;
-            if(possible_suffix_loc == suffix && _pattern[next_index - 1]!= _pattern[last_index - 1]){
+            if (possible_suffix_loc == suffix && _pattern[next_index - 1] != _pattern[last_index - 1]) {
                 good_suffixes.push_back(last_index - next_index + suffix.size()); // Shift is the distance between the
                 // Two matching indices plus the size of the suffix
                 found = true;
@@ -451,15 +452,15 @@ std::vector<int> SearchIt::preprocess_good_suffix(std::vector<std::vector<int>>&
         }
         // If it is at the end of the string, a substring has not been found yet, and the suffix matches the prefix,
         // Push the size of the pattern as the shift
-        if(next_index == 0 && (suffix == _pattern.substr(0, suffix.size())) && !found){
+        if (next_index == 0 && (suffix == _pattern.substr(0, suffix.size())) && !found) {
             good_suffixes.push_back(_pattern.size());
             // If it does not fit the prefix, check if the suffixes of the suffix match the prefix of the string
-        } else if(!found){
+        } else if (!found) {
             int shift = 0;
-            for(int i = 1; i < suffix.size(); i++){
+            for (int i = 1; i < suffix.size(); i++) {
                 // If a match is found, store the number of characters skipped, set found to true, then break
                 std::string suf_of_suf = suffix.substr(i);
-                if(suf_of_suf == _pattern.substr(0, suf_of_suf.size())){
+                if (suf_of_suf == _pattern.substr(0, suf_of_suf.size())) {
                     shift = i;
                     found = true;
                     break;
@@ -468,12 +469,12 @@ std::vector<int> SearchIt::preprocess_good_suffix(std::vector<std::vector<int>>&
 
             // If a suffix of the suffix was found, set the shift to the size of the pattern plus the number of
             // Characters skipped in the suffix
-            if(found){
+            if (found) {
                 good_suffixes.push_back(_pattern.size() + shift);
             } else {
                 // If nothing was found, set the shift to be the size of the pattern plus the size of the suffix
                 // (shift all the way past the mismatch)
-                good_suffixes.push_back(_pattern.size()+suffix.size());
+                good_suffixes.push_back(_pattern.size() + suffix.size());
             }
         }
         // Add the character to the left into the suffix and decrement last index

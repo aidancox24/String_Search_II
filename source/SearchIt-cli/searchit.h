@@ -29,8 +29,8 @@ public:
     // Constructor
     SearchIt(std::string text, std::string pattern);
 
-    // The search entry point into our search cli
-    void search(std::string searchType);
+    // The search entry point into our search cli that initiates the search using KMP or BM
+    std::string search(std::string searchType);
 
     // Search using the Knuth-Morris-Pratt algorithm
     std::vector<int> searchUsingKMP();
