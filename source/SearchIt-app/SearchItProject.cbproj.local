@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/11/17 18:15:23.000.530,=D:\OneDrive\Documents\TJC\Dev\CppBuilder\Unit1.cpp</Transaction>
+    <Transaction>2021/11/17 18:15:24.000.507,=D:\OneDrive\Documents\TJC\Dev\CppBuilder\Project1PCH1.h</Transaction>
+    <Transaction>2021/11/17 18:17:56.000.747,D:\OneDrive\Documents\TJC\Dev\CppBuilder\SearchItProject.cbproj=D:\OneDrive\Documents\TJC\Dev\CppBuilder\Project1.cbproj</Transaction>
+    <Transaction>2021/11/17 18:17:56.000.742,D:\OneDrive\Documents\TJC\Dev\CppBuilder\SearchItProjectPCH1.h=D:\OneDrive\Documents\TJC\Dev\CppBuilder\Project1PCH1.h</Transaction>
+    <Transaction>2021/11/17 18:19:33.000.834,D:\OneDrive\Documents\TJC\Dev\CppBuilder\SearchItApp.cpp=D:\OneDrive\Documents\TJC\Dev\CppBuilder\Unit1.cpp</Transaction>
+    <Transaction>2021/11/17 18:19:33.000.834,D:\OneDrive\Documents\TJC\Dev\CppBuilder\SearchItApp.h=D:\OneDrive\Documents\TJC\Dev\CppBuilder\Unit1.h</Transaction>
+    <Transaction>2021/11/17 18:19:33.000.834,D:\OneDrive\Documents\TJC\Dev\CppBuilder\SearchItApp.fmx=D:\OneDrive\Documents\TJC\Dev\CppBuilder\Unit1.fmx</Transaction>
+    <Transaction>2021/11/17 18:25:07.000.166,D:\OneDrive\Documents\TJC\Dev\URI\CSC212\Project\SearchIt-app\SearchItApp.h=D:\OneDrive\Documents\TJC\Dev\CppBuilder\SearchItApp.h</Transaction>
+    <Transaction>2021/11/17 18:25:07.000.166,D:\OneDrive\Documents\TJC\Dev\URI\CSC212\Project\SearchIt-app\SearchItApp.fmx=D:\OneDrive\Documents\TJC\Dev\CppBuilder\SearchItApp.fmx</Transaction>
+    <Transaction>2021/11/17 18:25:07.000.166,D:\OneDrive\Documents\TJC\Dev\URI\CSC212\Project\SearchIt-app\SearchItApp.cpp=D:\OneDrive\Documents\TJC\Dev\CppBuilder\SearchItApp.cpp</Transaction>
+    <Transaction>2021/11/17 18:25:10.000.525,D:\OneDrive\Documents\TJC\Dev\URI\CSC212\Project\SearchIt-app\SearchItProjectPCH1.h=D:\OneDrive\Documents\TJC\Dev\CppBuilder\SearchItProjectPCH1.h</Transaction>
+    <Transaction>2021/11/17 18:25:14.000.409,D:\OneDrive\Documents\TJC\Dev\URI\CSC212\Project\SearchIt-app\SearchItProject.cbproj=D:\OneDrive\Documents\TJC\Dev\CppBuilder\SearchItProject.cbproj</Transaction>
+    <Transaction>2021/11/17 18:28:47.000.989,=D:\OneDrive\Documents\TJC\Dev\URI\CSC212\Project\SearchIt-cli\SearchIt.cpp</Transaction>
+    <Transaction>2021/11/17 18:34:35.000.192,=D:\OneDrive\Documents\TJC\Dev\URI\CSC212\Project\SearchIt-cli\searchit.h</Transaction>
+    <Transaction>2021/11/17 18:49:43.000.121,D:\OneDrive\Documents\TJC\Dev\URI\CSC212\Project\SearchIt-cli\SearchIt.cpp=</Transaction>
+    <Transaction>2021/11/17 18:51:11.000.677,=D:\OneDrive\Documents\TJC\Dev\URI\CSC212\Project\SearchIt-cli\searchit.cpp</Transaction>
+  </Transactions>
+</BorlandProject>
