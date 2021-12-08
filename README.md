@@ -54,23 +54,23 @@ Here are some quick links to easily download project-related resources.
 
 [Search Windows GUI App](https://github.com/aidancox24/String_Seach_II/blob/main/downloads/SearchIt-app.exe)
 
-[Search Web App (demo video)](http://github.com/fooo)
+[Search Web App (demo video)](http://github.com)
 
 
 # Application Demos
 
 In addition to the implementation of our Search class and algorithm implementations, we decided to create 3 separate applications to show how we could use our core search code, and use it in 3 different application technologies:
 
-- Command Line Interface (CLI)
-- Windows-based GUI
-- Web-based GUI
+- [Command Line Interface (CLI)](#command-line-interface-demo)
+- [Windows-based GUI](#windows-based-gui-demo)
+- [Web-based GUI](#web-based-gui-demo)
 
 The following sections provides details on how to demo our applications.
 
 ## Command Line Interface (Demo)
 This is our main application which has all of our search CLI logic and search algorithm implementations. To run our CLI demo, follow these instructions:
 
---> Download our [SearchIt.exe](https://github.com/aidancox24/String_Seach_II/blob/main/downloads) to a directory 
+--> Download our [SearchIt.exe](https://github.com/aidancox24/String_Seach_II/blob/main/downloads) to a directory
 
 --> Open a terminal window and continue below with different command examples to demo
 
