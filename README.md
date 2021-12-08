@@ -1,36 +1,50 @@
-<img src="./images/URI.png" width="64" align="right">
+
 
 # CSC212 Fall 2021 Project - String Search II
 
-Our project focuses on 2 search alogrithms listed below. You can find much more details about our findings and project results in our [Project Report](https://github.com/aidancox24/String_Seach_II/tree/main/project-report). Also check out our [Project Slides](https://github.com/aidancox24/String_Seach_II/tree/main/project-report) for a nice overview of our project.
+<img src="./images/URI.png" width="140" align="right">
 
-- Knuth-Morris-Pratt Algorithm
-- Boyer-Moore-Algorithm
-
-<p><hr/></p>
+Our project focused on implementing **2 search alogrithms** as well as implementating **3 applications** which allow the user to interact with those search implementations. We also have supporting visualizations, [slides](https://github.com/aidancox24/String_Seach_II/tree/main/project-report) and a [project report](https://github.com/aidancox24/String_Seach_II/tree/main/project-report).
 
 This readme provides more information about our code structure, coding implementation, application demos, how to build and links to all available resources related to our project.
+
+# Table of Contents
+* [Project Team](#project-team)
+* [Individual Contributions](#individual-contributions)
+* [Quick Download Links](#quick-download-links)
+* [Application Demos](#application-demos)
+* [Building the Source Code](#Building-the-Source-Code)
 
 # Project Team (Team #18)
 
 <img src="./images/Project-Team.jpg" width="700" style="padding-bottom: 20px">
 
+
 # Individual Contributions
 
-<p style="color: red">Info here to be finalized.......</p>
+**Aidan Cox**
+- Main CLI C++ Class implementation
+- Windows GUI App C++ implementation
+- Web App Python/HTML/JS implementation
+- Github maintenance/Readme.md author
 
-**Aidan Cox** - Search C++ Class implementation, Windows GUI App implementation, Web App implementation, project slides, Github/Readme.md
+**Nicholas Mendes**
+ - Knuth-Morris-Pratt search C++ implementation
+ - Boyer-Moore search C++ implementation
+ - Runtime testing and analysis
 
-**Nicholas Mendes** - KMP C++ implementation, BM C++ implementation, project slides, ...
+**Emily Lavoie** 
+- Project slides
+- Visualizations
 
-**Emily Lavoie** - Project Report, project slides
+**Bilguuntur Munkhzaya** 
+- Search Algorithm plotting and visuals
+- Project slides contributions
 
-**Bilguuntur Munkhzaya** - algorithm plotting and visuals, project slides
 
+# Quick Download Links
 
-# Quick Links
-
-Here is some quick access to a list of available project-related resources for download.
+Here are some quick links to easily download project-related resources.
 
 [Project Report](https://github.com/aidancox24/String_Seach_II/tree/main/project-report)
 
@@ -40,37 +54,39 @@ Here is some quick access to a list of available project-related resources for d
 
 [Search CLI executable](https://github.com/aidancox24/String_Seach_II/blob/main/downloads/SearchIt.exe) 
 
-[Search Windows GUI](https://github.com/aidancox24/String_Seach_II/blob/main/downloads/SearchIt-app.exe)
+[Search Windows GUI App](https://github.com/aidancox24/String_Seach_II/blob/main/downloads/SearchIt-app.exe)
 
-[Search Web Application (demo video)](http://github.com/fooo)
+[Search Web App (demo video)](http://github.com/fooo)
 
 
 # Application Demos
 
-In addition to the implementation of our Search class and algorithm implementations, we decided to create 3 separate applications to show how we could use a common base of search code, and use it in 3 different application technologies:
+In addition to the implementation of our Search class and algorithm implementations, we decided to create 3 separate applications to show how we could use our core search code, and use it in 3 different application technologies:
 
 - Command Line Interface (CLI)
 - Windows-based GUI
 - Web-based GUI
 
-The following sections provides details on how to run these applications.
+The following sections provides details on how to demo our applications.
 
 ## Command Line Interface (Demo)
-This is our main application which has **ALL** of our search logic and search algorithm implementations.
+This is our main application which has all of our search CLI logic and search algorithm implementations. To run our CLI demo, follow these instructions:
 
-To run this CLI demo, first download our [Search CLI executable](https://github.com/aidancox24/String_Seach_II/blob/main/downloads/SearchIt.exe) to a directory on your system and then open a terminal window. Follow the instructions below to demo it.
+--> Download our [SearchIt.exe](https://github.com/aidancox24/String_Seach_II/blob/main/downloads) to a directory 
 
---> To see the usage info for our search command line issue this command:
+--> Open a terminal window and continue below with different command examples to demo
+
+--> To see the usage info for supported arguments issue this command:
 
 ```
-$ searchIt -h
+$ SearchIt.exe -h
 ```
 
 Ouput:
 
 ```
 Usage:
-        searchit.exe [searchType] [searchPattern] [text | fileName -file]
+        SearchIt.exe [searchType] [searchPattern] [text | fileName -file]
 
         Arguments:
                 [searchType] - KMP or BM
@@ -88,7 +104,7 @@ Usage:
 --> To search for a pattern in a simple string, using the Knuth-Morris-Pratt algorith, issue this command:
 
 ```
-$ searchIt KMP URI UUUURIIURIUURIURIIURIIIUURIRRURII
+$ SearchIt.exe KMP URI UUUURIIURIUURIURIIURIIIUURIRRURII
 ```
 Ouput:
 ```
@@ -108,10 +124,10 @@ Search Results:
 
 ```
 
---> To search for a pattern using the Boyer-Moore-Algorithm, issue this command:
+--> To search for a pattern using the Boyer-Moore algorithm, issue this command:
 
 ```
-$ searchIt BM URI UUUURIIURIUURIURIIURIIIUURIRRURII
+$ SearchIt.exe BM URI UUUURIIURIUURIURIIURIIIUURIRRURII
 ```
 Ouput:
 ```
@@ -132,7 +148,7 @@ Search Results:
 --> To search for a pattern from text loaded from a **file** issue this command:
 
 ```
-$ searchIt BM URI sample.txt -file
+$ SearchIt.exe BM URI sample.txt -file
 ```
 Ouput:
 ```
@@ -152,33 +168,41 @@ Search Results:
 
 ## Windows-based GUI (Demo)
 
-In addition to our CLI application, we wanted to create a Windows-based GUI which utilizes our search algorithms. 
+In addition to our search CLI application, we wanted to create a Windows-based GUI which provides the user with a simple GUI and still ties into our search algorithms. 
 
-To run this GUI demo, download our [Search App executable](https://github.com/aidancox24/String_Seach_II/blob/main/downloads/SearchIt-app.exe) to a directory on your system. Double click to launch the application. You should see the following:
+GUI Highights
+- Simple interface
+- Easily select the search algorithm
+- Easily enter text or load text from a file
+- Includes our core C++ search algorithm code (no code duplication!)
+- Native Windows executable (can be ported to Mac/Linux)
+  
+To run this GUI demo, download our [SearchItApp.exe](https://github.com/aidancox24/String_Seach_II/blob/main/downloads) to a directory on your system. 
+
+--> Double click the exe to launch our search application.
+
+Output:
 
 <img src="./images/SearchIt-app.png" width="300" style="padding-bottom: 20px">
 
---> You can now interact with our search GUI to do things such as:
-- Enter a pattern
-- Manually enter text to search OR
-- Load text from a file
-- Search using Knuth-Morris-Pratt OR Boyer-Moore-Algorithm
+--> You can now interact with our search GUI to perform a search
 
 Sample Output:
 
 <img src="./images/SearchIt-app-example.png" width="300" style="padding-bottom: 20px">
 
 
-## Windows-based GUI (Demo)
+## Web-based GUI (Demo)
 
-We also created a third GUI to demonstrate how we could call into our search algorithms from a web browser! Setting up this web environment is a little much for a quick demo. See the How to Build section if you want to setup the environment for yourself. So we are showing you some screenshots here
+We also created a third GUI to demonstrate how we could call into our search algorithms from a web browser application! Setting up this web environment for a quick demo is a little involved, so we will just provide some screenshots here. If you are interested in setting up your own environment to run our web application, you can follow the steps list in our how to build the web app GUI below.
 
---> You can interact with our web-based search GUI from your favorite browser and do things such as:
-
-- Enter a pattern
-- Manually enter text to search OR
-- Load text from a file
-- Search using Knuth-Morris-Pratt OR Boyer-Moore-Algorithm
+GUI Highights
+- Modern interface
+- Easily select the search algorithm
+- Easily enter text or load text from a file
+- Provides validation feedback on input
+- Manually enter text or load from a file
+- Perform the search and get to a results page
 
 <img src="./images/SearchIt-web.png" width="500" style="padding-bottom: 20px">
 
@@ -198,9 +222,9 @@ Building our main source code for our search app is pretty straight foward.
 
 -> Download the searchit.cpp and searchit.h from our [source](https://github.com/aidancox24/String_Seach_II/tree/main/source/SearchIt-cli) directory.
 
--> Open a terminal to where you saved the files.
+--> Open a terminal to where you saved the files.
 
--> Execute the following command to build and create the search executable:
+--> Execute the following command to build and create the search executable:
 
 ```
 $ g++ -o search.exe searchit.cpp searchit.h
@@ -208,10 +232,10 @@ $ g++ -o search.exe searchit.cpp searchit.h
 For usage instructions you can now run your exe like this:
 
 ```
-$ search.exe -h 
+$ Search.exe -h 
 
 Usage:
-        searchit.exe [searchType] [searchPattern] [text | fileName -file]
+        Searchit.exe [searchType] [searchPattern] [text | fileName -file]
 
         Arguments:
                 [searchType] - KMP or BM
@@ -227,44 +251,47 @@ Usage:
 
 ```
 
-## Windows-based GUI (Demo)
+## Windows-based GUI (Build)
 
-Building our Windows-based GUI involves installing the [C++ Builder IDE](https://www.embarcadero.com/products/cbuilder/starter/free-download) and setting up your environment a bit. See our [README.md](https://github.com/aidancox24/String_Seach_II/blob/main/source/SearchIt-app/README.md) which is dedicated in the steps on getting your environment setup to build the Windows-based search app.
+The steps to build our Windows-based GUI is a little bit involved for this readme. We used the [C++ Builder IDE](https://www.embarcadero.com/products/cbuilder/starter/free-download) for the development. The main files for this application are checked into GitHub and can found in the [source/SearchIt-app](https://github.com/aidancox24/String_Seach_II/tree/main/source/SearchIt-app) folder.  You can review the code but building the code is out of scope for this readme.
+
+Note: We imported and re-used all of our core search algorithm code. No code was repeated in this application.
+
 
 ## Web-based GUI (Build)
 
-For our Web-based GUI, you really don't "build" the GUI but rather just run it. We use the Flask/Python environment that lets you simply use python to accept web requsts, do some work, then respond with the html/js.  Here is a good tutorial on this.
+For our web-based GUI, you really don't "build" the GUI but rather just start a web server and point a browser at it. We use a Flask/Python environment which acts as a simple web server and lets us use python to accept web requsts, do some work, and then respond to the browser with the html/js pages. 
 
 To get your environment setup, simply follow these instructions.
 
--> Install the latest version of Python on your system
+--> Download our web-based app [source](https://github.com/aidancox24/String_Seach_II/tree/main/source/SearchIt-web) into a new project folder on your system.
 
--> Create a project folder to store our web files.
+--> Install the latest version of Python on your system.
 
--> From with your project folder issue this command to create a virtual env
+--> From within your project folder issue this command to create a virtual env
 
 ```
 py -3 -m venv .venv
 ```
 
--> Activate your new virtual env
+--> Activate your new virtual env
 
 ```
 .venv\scripts\activate
 ```
 
--> Make sure pip is installed
+--> Make sure pip is installed
 
 ```
 python -m pip install --upgrade pip
 ```
 
---> Install the Flask module which is required to simulate a web server
+--> Install the Flask python module which is required to simulate a web server
 
 ```
 python -m pip install flask
 ```
--> Run your search.py program which starts the Flask/Python webserver on port 5000.
+--> Run your `search.py` program which starts the Flask/Python web server.
 
 ```
 py search.py
@@ -285,8 +312,7 @@ Ouput:
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://localhost:5000/ (Press CTRL+C to quit)
 ```
--> Open a browser to http://localhost:5000 to use the search web application!
+--> You are now all set! Open your favorite browser to http://localhost:5000 to use our search web application!
 
-# Project Report
 
-You can download our [Project Report](https://github.com/aidancox24/String_Seach_II/tree/main/project-report) to get details about our project findings.
+
