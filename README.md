@@ -54,9 +54,6 @@ Here are some quick links to easily download project-related resources.
 
 [Search Windows GUI App](https://github.com/aidancox24/String_Seach_II/blob/main/downloads/SearchIt-app.exe)
 
-[Search Web App (demo video)](http://github.com)
-
-
 # Application Demos
 
 In addition to the implementation of our Search class and algorithm implementations, we decided to create 3 separate applications to show how we could use our core search code, and use it in 3 different application technologies:
