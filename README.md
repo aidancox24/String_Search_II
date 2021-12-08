@@ -38,8 +38,8 @@ This readme provides more information about our code structure, coding implement
 - Visualizations
 
 **Bilguuntur Munkhzaya** 
+- Project Report
 - Search Algorithm plotting and visuals
-- Project slides contributions
 
 
 # Quick Download Links
