@@ -34,13 +34,11 @@ This readme provides more information about our code structure, coding implement
  - Runtime testing and analysis
 
 **Emily Lavoie** 
-- Project slides
+- Project Presentation slides
 - Visualizations
 
 **Bilguuntur Munkhzaya** 
 - Project Report
-- Search Algorithm plotting and visuals
-
 
 # Quick Download Links
 
