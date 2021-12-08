@@ -260,7 +260,9 @@ Note: We imported and re-used all of our core search algorithm code. No code was
 
 For our web-based GUI, you really don't "build" the GUI but rather just start a web server and point a browser at it. We use a Flask/Python environment which acts as a simple web server and lets us use python to accept web requsts, do some work, and then respond to the browser with the html/js pages. 
 
-To get your environment setup, simply follow these instructions.
+To get your environment setup, simply follow these instructions.<br/>
+
+Note: Execute these commands using windows command prompt.<br/>
 
 --> Download our web-based app [source](https://github.com/aidancox24/String_Seach_II/tree/main/source/SearchIt-web) into a new project folder on your system.
 
