@@ -183,13 +183,13 @@ To run this GUI demo, download our [SearchItApp.exe](https://github.com/aidancox
 
 Output:
 
-<img src="./images/SearchIt-app.png" width="300" style="padding-bottom: 20px">
+<img src="./images/SearchIt-App.png" width="300" style="padding-bottom: 20px">
 
 --> You can now interact with our search GUI to perform a search
 
 Sample Output:
 
-<img src="./images/SearchIt-app-example.png" width="300" style="padding-bottom: 20px">
+<img src="./images/SearchIt-App-Example.png" width="300" style="padding-bottom: 20px">
 
 
 ## Web-based GUI (Demo)
