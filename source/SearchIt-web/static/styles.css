@@ -1,0 +1,104 @@
+/*
+ *  Some custom styles for our search we app.
+ */
+
+
+body {
+    margin: 20px;
+    background-color: #d6eeff;
+    color: #002147;
+}
+
+.searchHeader {
+    display: flex;
+    margin-bottom: 30px;
+}
+.title {
+    padding-left: 20px;
+}
+
+/* Styles for our button */
+.btn-primary {
+    background-color: #2277B3;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus  {
+    background-color: #002147;
+}
+
+/* The search algorithm dropdown */
+.custom-select {
+    background-color: #e9ecef;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.custom-select:focus {
+    box-shadow: none;
+}
+#searchFile {
+    margin-bottom: 10px;
+}
+label {
+    font-size: 20px;
+    padding-left: 2px;
+    padding-bottom: 4px;
+}
+
+.search-bar {
+    display: grid;
+    grid-template-columns: 280px 2fr 280px;
+    grid-column-gap: 20px;
+    align-items: end;
+    padding-bottom: 30px;
+}
+
+#search-button {
+    width: 100%;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+}
+
+.textPreview {
+    font-family: Consolas;
+}
+
+.searchCompleteText {
+    color: #2277B3;
+    padding-bottom: 10px;
+    font-size: 32px;
+}
+.error-message {
+    color: red;
+    display: inline-block;
+    padding-left: 10px;
+}
+.back {
+    margin-top: 20px;
+    display:flex;
+    justify-content: space-around;
+}
+#back-button {
+    width: 200px;
+}
+
+.matchesSection {
+    display: flex;
+    flex-direction: column;
+}
+.matchesPreview {
+    font-family: Consolas;   
+    background-color: white; 
+    flex: 1;
+    word-break: break-all;
+    max-height: 494px;
+    overflow: auto;
+}
+
+.mark, mark {
+    background: yellow;
+    border: 1px solid gold;
+}
