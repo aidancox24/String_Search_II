@@ -4,7 +4,7 @@
 
 <img src="./images/URI.png" width="140" align="right">
 
-Our project focused on implementing **2 search alogrithms** as well as implementating **3 applications** which allow the user to interact with those search implementations. We also have supporting visualizations, [slides](https://github.com/aidancox24/String_Seach_II/tree/main/project-report) and a [project report](https://github.com/aidancox24/String_Seach_II/tree/main/project-report).
+Our project focused on implementing **2 search alogrithms** as well as implementating **3 applications** which allow the user to interact with those search implementations. We also have supporting visualizations, [slides](https://github.com/aidancox24/String_Seach_II/tree/main/Presentation) and a [project report](https://github.com/aidancox24/String_Seach_II/tree/main/project-report).
 
 This readme provides more information about our code structure, coding implementation, application demos, how to build and links to all available resources related to our project.
 
