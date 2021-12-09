@@ -31,7 +31,7 @@ This readme provides more information about our code structure, coding implement
 **Nicholas Mendes**
  - Knuth-Morris-Pratt search C++ implementation
  - Boyer-Moore search C++ implementation
- - Runtime testing and analysis
+ - Benchmarking
 
 **Emily Lavoie** 
 - Project Presentation slides
