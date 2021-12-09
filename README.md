@@ -38,6 +38,8 @@ This readme provides more information about our code structure, coding implement
 - Visualizations
 
 **Bilguuntur Munkhzaya** 
+- Knuth-Morris-Pratt Research
+- Sources
 - Project Report
 
 # Quick Download Links
